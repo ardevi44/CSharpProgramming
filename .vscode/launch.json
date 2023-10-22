@@ -10,9 +10,9 @@
       "request": "launch",
       "preLaunchTask": "build",
       // If you have changed target frameworks, make sure to update the program path.
-      "program": "${workspaceFolder}/Fundamentals/bin/Debug/net7.0/Fundamentals.dll",
+      "program": "${workspaceFolder}/OOP/bin/Debug/net7.0/OOP.dll",
       "args": [],
-      "cwd": "${workspaceFolder}/Fundamentals",
+      "cwd": "${workspaceFolder}/OOP",
       // For more information about the 'console' field, see https://aka.ms/VSCode-CS-LaunchJson-Console
       "console": "externalTerminal",
       "stopAtEntry": false
