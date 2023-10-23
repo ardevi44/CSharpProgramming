@@ -18,21 +18,22 @@ namespace OOP.Practice
         rectangle2
       };
 
+      foreach (var rectangle in rectangleList)
+      {
+        Console.WriteLine($"-- Rectangle {rectangleList.IndexOf(rectangle) + 1} --");
+        Console.WriteLine($"Width: {rectangle.Width}");
+        Console.WriteLine($"Height: {rectangle.Height}");
+        Console.WriteLine($"Perimeter: {rectangle.CalculatePerimeter()}");
+        Console.WriteLine($"Area: {rectangle.CalculateArea()}");
+      }
 
-      // foreach (var rectangle in rectangleList)
-      // {
-      //   Console.WriteLine($"-- Rectangle {rectangleList.IndexOf(rectangle) + 1} --");
-      //   Console.WriteLine($"Width {rectangle.Width}");
-      //   Console.WriteLine($"Height {rectangle.Height}");
-      // }
-
-      var booking1 = new HotelBooking("Jose Arbey", DateTime.Now, 5);
-      booking1.PrintBookingInfo();
+      // var booking1 = new HotelBooking("Jose Arbey", DateTime.Now, 5);
+      // booking1.PrintBookingInfo();
     }
 
   }
 
-  class Rectangle
+  public class Rectangle
   {
     public int Width;
     public int Height;
@@ -41,6 +42,16 @@ namespace OOP.Practice
     {
       Width = width;
       Height = height;
+    }
+
+    public int CalculatePerimeter()
+    {
+      return 2 * (Width + Height);
+    }
+
+    public int CalculateArea()
+    {
+      return Width * Height;
     }
   }
 
