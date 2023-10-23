@@ -44,15 +44,11 @@ namespace OOP.Practice
       Height = height;
     }
 
-    public int CalculatePerimeter()
-    {
-      return 2 * (Width + Height);
-    }
+    // Expression-bodied method
+    public int CalculatePerimeter() => 2 * (Width + Height);
 
-    public int CalculateArea()
-    {
-      return Width * Height;
-    }
+    // Expression-bodied method
+    public int CalculateArea() => Width * Height;
   }
 
   public class HotelBooking
