@@ -18,6 +18,11 @@ namespace OOP.Practice
       medicalAppointment.Reschedule(5, 1);
       medicalAppointment.Reschedule(1, 2);
       */
+
+      var medicalAppointment = new MedicalAppointment("Ardevi", DateTime.Now);
+      medicalAppointment.Reschedule(DateTime.Now);
+      Console.WriteLine("---");
+      medicalAppointment.Reschedule(DateTime.Now.AddDays(5));
     }
 
 
@@ -25,12 +30,13 @@ namespace OOP.Practice
 
   public class MedicalAppointment
   {
-    private string _patientName;
+    private string patientName;
     private DateTime _date;
 
+    public DateTime GetDate() => _date;
     public MedicalAppointment(string patientName, DateTime date)
     {
-      _patientName = patientName;
+      this.patientName = patientName;
       _date = date;
     }
 
@@ -42,13 +48,16 @@ namespace OOP.Practice
 
     public MedicalAppointment(string patientName, int daysFromNow)
     {
-      _patientName = patientName;
+      this.patientName = patientName;
       _date = DateTime.Now.AddDays(daysFromNow);
     }
 
+    // Simple Reschedule
     public void Reschedule(DateTime date)
     {
+      var printer = new MedicalAppointmentPrinter();
       _date = date;
+      printer.Print(this);
     }
 
     /*
@@ -87,4 +96,13 @@ namespace OOP.Practice
       );
     }
   }
+
+  public class MedicalAppointmentPrinter
+  {
+    public void Print(MedicalAppointment medicalAppointment)
+    {
+      Console.WriteLine("Appointment will take place on " + medicalAppointment.GetDate());
+    }
+  }
+
 }
